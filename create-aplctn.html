@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+
+        <!-- ПОДКЛБЧЕНИЕ CCS -->
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/create-aplctn/create-aplctn.css">
+        <link rel="stylesheet" href="./css/create-aplctn/input-file.css">
+    </head>
+    <body class="page =">
+
+        <main class="main center container">
+            <div class="container">
+            <form action="" method="" class="apl-form apl-form">
+                <h2 class="apl-form__title h2">Новая заявка</h2>
+                <input  class="apl-form__input section-descr"   type="text"     placeholder="Заголовок">
+                <textarea placeholder="Описание" class="apl-form__txt"></textarea>
+
+                
+                <div class="field__wrapper">
+    
+                    <input name="file" type="file" name="file" id="field__file-2" class="field field__file" multiple>
+                    
+                    <label class="field__file-wrapper" for="field__file-2">
+                    <div class="field__file-fake">Файл не вбран</div>
+                    <div class="field__file-button">Выбрать</div>
+                    </label>
+                    
+                </div>
+
+
+                <button class="apl-form__btn btn" type="submit">Добавить</button>
+            </form>
+        </div>
+            
+        </main>
+        
+        <script src="./js/input-file.js"></script>
+    </body>
+</html>

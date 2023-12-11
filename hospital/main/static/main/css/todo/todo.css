@@ -1,0 +1,144 @@
+.applications {
+    margin-bottom: 100px;
+}
+
+.applications__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+}
+.applications__item {
+    width: 580px ;
+    padding: 32px 24px 40px 24px;
+    border-radius: 6px;
+    border: 3px solid #209CEE; 
+}
+.appications__title{
+    margin-bottom: 24px;
+
+}
+
+.applications__descr {
+    margin-bottom: 37px;
+}
+
+.applications__buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.applications__btn {
+    padding: 7px 20px;
+    border-radius: 4px;
+    background: #D9D9D9; 
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+.applications__status-info{
+    display: flex;
+    justify-content: center;
+
+    width: 100px;
+
+    padding: 0px;
+    margin-top: 0px;
+    border: 0px solid black;
+    border-radius: 15px;
+
+
+    text-transform: uppercase;
+    opacity: 0;
+
+    transition: width 0.3s ease-in-out, margin-top 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.applications__status-info .applications__info{
+    font-size: 0;
+}
+.show-status{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    opacity: 1;
+    border: 1px solid black;
+    transition: width 0.3s ease-in-out, margin-top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.show-status .applications__info{
+    font-size: 24px;
+}
+
+
+/* Media */
+@media(max-width : 1366px){
+    
+    .applications__item {
+        width: 380px
+    }
+}
+
+@media(max-width : 992px){
+    .applications__grid{
+        gap: 10px;
+    }
+    .applications__item{
+        width: 280px;
+        padding: 20px 14px 20px 14px;
+    }
+}
+
+@media(max-width : 768px){
+    .header-nav{
+        text-align: center;
+    }
+    .header-nav__link{
+        font-size: 18px;
+        text-align: center;
+    }
+    .applications__item {
+        width: 200px;
+      }
+    .h3{
+        font-size: 18px;
+    }
+    .section-descr{
+        font-size: 14px;
+    }
+    .show-status .applications__info{
+        font-size: 14px;
+    }
+    .applications__btn{
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .appications__title {
+        margin-bottom: 14px;
+    }
+    .applications__descr {
+        margin-bottom: 17px;
+    }
+}
+
+@media(max-width : 480px){
+    .show-status{
+        padding: 5px;
+    }
+    .applications__item {
+        width: 200px;
+        padding: 10px 7px 10px 7px;
+    }
+    .appications__title {
+    margin-bottom: 14px;
+    }
+    .applications__descr {
+        margin-bottom: 8px;
+    }
+    .applications__btn {
+        padding: 5px 5px;
+    }
+}

@@ -1,0 +1,26 @@
+<header class="header">
+            <div class="container">
+                <div class="haeder__wrapper">
+
+                    <div></div>
+
+
+                    <!-- Навигация -->
+                    <div class="header-nav">
+                        <ul class="header-nav__list">
+                            <li class="header-nav__item"><a href="{% url 'todo' %}" class="header-nav__link">Обновить заявки</a></li>
+                            <li class="header-nav__item"><a href="{% url 'create' %}" class="header-nav__link">Создать новую</a></li>
+                            <li class="header-nav__item"><a href="{% url 'logout' %}" class="header-nav__link">Выйти</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Бургер кнопка -->
+                    <button class="btn-reset burger">
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                    </button>
+                </div>
+
+            </div>
+        </header>
