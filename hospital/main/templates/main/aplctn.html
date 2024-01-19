@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+{% load static%}
+
+
+{% block title %}Заявка{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main\css\create-aplctn\create-aplctn.css' %}">
+    <link rel="stylesheet" href="{% static 'main\css\base\header.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'main\header.html' %}
+{% endblock %}
+
+{% block main %}
+    <main class="main center container">
+        <div class="container">
+            <div  class="apl-form apl-form">
+                <h2 class="apl-form__title h2">{{ desk.title }}</h2>
+                <p  class="apl-descr section-descr">{{desk.desk}}</p>
+                <p  class="apl-descr section-descr">
+                    {% comment %} {{desk.status}} {% endcomment %}
+                    {% if desk.status %}
+                        Статус : Готово
+                    {% else %}
+                        Статус : Не готово
+                    {% endif %}
+
+                </p>
+
+                {% if desk.image %}
+                    <img src="{{ desk.image.url }}" alt="Фотография">
+                {% else %}
+                    <p class="section-descr">Изображение отсутствует</p>
+                {% endif %}
+
+                {% if desk.status %}
+                {% else %}
+                    <p class="section-descr">При нажатии на кнопку ниже, вы подтверждаете выполнение заявки и присваиваете ей статус "Готово"</p>
+                    <form method="post" action="{% url 'change_status' desk.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="status" value="True">
+                        <button class="apl-form__btn btn" type="submit">Завершить</button>
+                    </form>
+                {% endif %}
+                
+                
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+
+{% comment %} {% url 'delete_desk' desk.id %} {% endcomment %}

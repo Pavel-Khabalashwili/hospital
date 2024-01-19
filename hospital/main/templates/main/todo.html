@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+{% load static%}
+
+
+{% block title %}TODO{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main\css\todo\todo.css' %}">
+    <link rel="stylesheet" href="{% static 'main\css\base\header.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'main/header.html' %}
+{% endblock %}
+
+{% block main %}
+    <main class="main">
+            <section class="applications">
+                <div class="container">
+                    <ul class="applications__grid">
+
+                        {% for entry in entries %}
+                            <li class="applications__item">
+                                <h3 class="h3 appications__title" >{{ entry.title }}</h3>
+                                <p class="applications__descr section-descr">{{ entry.desk }}</p>
+                                <div class="applications__buttons-wrapper">
+                                    <button class="applications__btn status-btn">Статус</button>
+                                    <a href="{% url 'detail' entry.title %}" class="applications__btn">Подробнее</a>
+                                </div>
+
+                                <div class="applications__status-info ">
+                                    <p class="applications__info section-descr">
+                                        {% if entry.status %}
+                                            Готово
+                                        {% else %}
+                                            Не готово
+                                        {% endif %}
+                                        {% comment %} {{ entry.status }} {% endcomment %}
+                                    </p>
+                                </div>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </section>
+    </main>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'main\js\burger-menu.js' %}"></script>
+    <script src="{% static 'main\js\applctn-status.js' %}"></script>
+{% endblock %}

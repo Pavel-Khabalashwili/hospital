@@ -1,0 +1,158 @@
+/* ПОДКЛЮЧЕНИЕ СБРОСА СТИЛЕЙ */
+@import url("reset.css");
+
+/* ПОДКЛЮЧЕНИЕ ШРИФТОВ */
+
+/* Regular */
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto-Regular"),
+        url("../fonts/Regular/Roboto-Regular.woff2") format("woff2"),
+        url("../fonts/Regular/Roboto-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto-Bold"),
+        url("../fonts/Bold/Roboto-Bold.woff2") format("woff2"),
+        url("../fonts/Bold/Roboto-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* --------------------------------------------------------- */
+
+
+/* БАЗОВЫЕ СТИЛИ */
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    /* Размеры формы входа */
+    --log-window-height: 480px;
+    --log-window-width: 620px;
+
+    /* Цвета */
+    --primary-color:   #fff;
+    --secondary-color: #209CEE;
+    --black--color:    #000;
+}
+
+.page {
+    min-width: 320px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    /* overflow-x: hidden; */
+}
+
+/* --------------------------------------------------------- */
+
+/* ОСНОВНЫЕ СТИЛИ ДЛЯ ОБЩИХ ЭЛЕМЕНТОВ */
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1890px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.h1{
+    color: var(--black--color);
+    font-family: Roboto;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+.h2{
+    color: var(--black--color);
+    font-family: Roboto;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+   
+
+}
+.h3{
+    color: var(--black--color);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+
+}
+.section-title {
+
+}
+.section-descr {
+    color: #000;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.section-offset {
+} 
+
+.btn {
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #00D1B2;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+}
+.stop-scroll{
+    overflow: hidden;
+}
+
+/* --------------------------------------------------------- */
+
+
+.hide-block{
+    display: none !important;
+}
+

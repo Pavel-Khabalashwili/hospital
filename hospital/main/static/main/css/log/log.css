@@ -1,0 +1,104 @@
+.log-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width:var(--log-window-width);
+    height: var(--log-window-height);
+    padding: 40px 50px;
+    background-color: var( --primary-color);
+    border: 4px solid var(--secondary-color);
+    border-radius: 12px; 
+
+    position: absolute;
+    top: calc( 50% - 240px );
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.log-form__title {
+    margin-bottom: 60px;
+}
+.log-form__input {
+    width: 100%;
+    padding: 13px 24px;
+    margin-bottom: 32px;
+    border-radius: 6px;
+    border: 1px solid #1172B2; 
+
+    color: var(--black--color);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.log-bg{
+    background-image: url('/static/main/img/hospital.jpg');
+    background-repeat: no-repeat;
+    background-size: 45%;
+}
+
+/* Media */
+
+@media(max-width : 1024px){
+    :root{
+        --log-window-width: 520px
+    }
+}
+
+@media(max-width : 992px){
+    .log-bg {
+
+        background-size: cover;
+    }   
+}
+
+@media(max-width : 768px){
+    :root{
+        --log-window-width: 420px;
+        --log-window-height: 300px;
+    }
+
+    .log-form {
+        top: calc( 50% - 140px );
+    }
+
+    .log-form__input{
+        margin-bottom: 12px;
+        padding: 10px 14px;
+    }
+
+    .log-form__title {
+        margin-bottom: 15px;
+    }
+    .btn {
+        padding: 10px 0;
+    } 
+}
+
+@media(max-width : 480px){
+    .log-form{
+        padding: 20px 25px;
+        top: calc( 50% - 125px );
+    }
+    .h1{
+        font-size: 18px;
+    }
+    .h2{
+        font-size: 18px;
+    }
+    .btn {
+        font-size: 18px;
+      }
+      .log-form__input {
+        font-size: 14px;
+      }
+
+    :root{
+        --log-window-width: 230px;
+        --log-window-height: 250px;
+    }
+    
+}

@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static%}
+
+
+{% block title %}Вход{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main\css\log\log.css' %}">
+{% endblock %}
+
+{% block main %}
+            <main class="main center container">
+                <form method="post" class="log-form">
+                    {% csrf_token %}
+                    <h2 class="log-form__title h2">Авторизация</h2>
+                    <input name="username"  class="log-form__input section-descr"   type="text"     placeholder="Логин">
+                    <input name="password"  class="log-form__input section-descr"   type="password" placeholder="Пороль">
+                    <button class="log-form__btn btn" type="submit">Вход</button>
+                </form>
+            </main>
+{% endblock %}
