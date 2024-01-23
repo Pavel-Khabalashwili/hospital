@@ -19,8 +19,9 @@ class ApplicationDetailView(DetailView):
     context_object_name = 'desk'
 
     def get_object(self):
+        pk = self.kwargs.get('pk')
         title = self.kwargs.get('title')
-        return get_object_or_404(Applications, title=title)
+        return get_object_or_404(Applications, pk=pk, title=title)
     
     
 def index(request):

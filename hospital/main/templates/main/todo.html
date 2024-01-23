@@ -25,7 +25,7 @@
                                 <p class="applications__descr section-descr">{{ entry.desk }}</p>
                                 <div class="applications__buttons-wrapper">
                                     <button class="applications__btn status-btn">Статус</button>
-                                    <a href="{% url 'detail' entry.title %}" class="applications__btn">Подробнее</a>
+                                    <a href="{% url 'detail' title=entry.title pk=entry.id %}" class="applications__btn">Подробнее</a>
                                 </div>
 
                                 <div class="applications__status-info ">
