@@ -28,6 +28,9 @@
                     {% endif %}
 
                 </p>
+                <p class="applications__descr section-descr">
+                    Дата: {{desk.datetime_field |date:"d.m.Y" }}  [{{ desk.datetime_field |time:"H:i" }}]
+                </p>
 
                 {% if desk.image %}
                     <img src="{{ desk.image.url }}" alt="Фотография">

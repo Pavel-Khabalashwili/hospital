@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
+from django.utils import timezone
 import os
 
 
@@ -10,6 +11,7 @@ class Applications(models.Model):
     desk  = models.TextField('Описание')
     status = models.BooleanField('Cтатус', default=False)
     image = models.ImageField(upload_to='photos/', null=True, blank=True, )
+    datetime_field = models.DateTimeField("Дата - время", default=timezone.now)
 
     def delete(self, *args, **kwargs):
         # Сначала удаляем файл изображения

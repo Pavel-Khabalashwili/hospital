@@ -23,6 +23,7 @@
                             <li class="applications__item">
                                 <h3 class="h3 appications__title" >{{ entry.title }}</h3>
                                 <p class="applications__descr section-descr">{{ entry.desk }}</p>
+                                <p class="applications__descr section-descr">Дата: {{ entry.datetime_field |date:"d.m.Y" }}  [{{ entry.datetime_field |time:"H:i" }}]</p>
                                 <div class="applications__buttons-wrapper">
                                     <button class="applications__btn status-btn">Статус</button>
                                     <a href="{% url 'detail' title=entry.title pk=entry.id %}" class="applications__btn">Подробнее</a>
@@ -35,7 +36,6 @@
                                         {% else %}
                                             Не готово
                                         {% endif %}
-                                        {% comment %} {{ entry.status }} {% endcomment %}
                                     </p>
                                 </div>
                             </li>
