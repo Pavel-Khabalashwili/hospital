@@ -11,6 +11,9 @@ class ApplicationsAdmin(admin.ModelAdmin):
     readonly_fields = ("show_photo",)
     search_fields = "title", "desk",
     
+    exclude = ("status",)  # Скрыть поле "status" в панели редактирования записи
+
+    
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser:
@@ -25,8 +28,3 @@ class ApplicationsAdmin(admin.ModelAdmin):
         else:
             return ''
     show_photo.short_description = 'Изображение'
-
-
- # def show_photo(self, obj : Applications) -> str:
-    #     return format_html('<img src="{}" width="50" height="50" />', obj.image.url)
-    # show_photo.short_description = 'Изображение'

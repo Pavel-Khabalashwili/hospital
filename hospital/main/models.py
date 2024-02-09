@@ -6,11 +6,17 @@ import os
 
 
 class Applications(models.Model):
+    STATUS_CHOICES = (
+        (0, 'Не готово'),
+        (1, 'В работе'),
+        (2, 'Готово'),
+    )
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField('Заголовок', max_length=50)
-    desk  = models.TextField('Описание')
-    status = models.BooleanField('Cтатус', default=False)
-    image = models.ImageField(upload_to='photos/', null=True, blank=True, )
+    desk = models.TextField('Описание')
+    status = models.IntegerField('Статус', choices=STATUS_CHOICES, default=0)
+    image = models.ImageField('Изображение', upload_to='photos/', null=True, blank=True)
     datetime_field = models.DateTimeField("Дата - время", default=timezone.now)
 
     def delete(self, *args, **kwargs):

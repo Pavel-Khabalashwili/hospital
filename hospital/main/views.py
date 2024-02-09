@@ -58,7 +58,7 @@ def create(request):
 
 @login_required
 def aplctn(request):
-    return render(request, 'main/aplctn.html')
+    return render(request, 'main/aeeeplctn.html')
 
 
 def delete_desk(request, pk):
@@ -71,6 +71,6 @@ def delete_desk(request, pk):
 def change_status(request, pk):
     if request.method == 'POST':
         desk = get_object_or_404(Applications, pk=pk)
-        desk.status = True
+        desk.status = desk.status + 1
         desk.save()
         return redirect('todo')

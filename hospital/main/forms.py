@@ -4,7 +4,7 @@ from django.forms import ModelForm, TextInput, Textarea, ClearableFileInput
 class ApplicationsForm(ModelForm):
     class Meta:
         model = Applications
-        fields = ['title', 'desk', 'status', 'image']
+        fields = ['title', 'desk','image']
 
         widgets = {
             "title": TextInput(attrs={
@@ -14,10 +14,6 @@ class ApplicationsForm(ModelForm):
             "desk": Textarea(attrs={
                 'class': 'apl-form__txt',
                 'placeholder': 'Описание'
-            }),
-            "status": TextInput(attrs={
-                'class': 'apl-form__input section-descr',
-                'placeholder': 'Текущее состояние'
             }),
             "image": ClearableFileInput(attrs={
                 'class': 'field field__file',

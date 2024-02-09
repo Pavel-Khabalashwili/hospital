@@ -21,10 +21,14 @@
                 <p  class="apl-descr section-descr">{{desk.desk}}</p>
                 <p  class="apl-descr section-descr">
                     {% comment %} {{desk.status}} {% endcomment %}
-                    {% if desk.status %}
-                        Статус : Готово
+                    {% if desk.status == 0 %}
+                        Не готово
+                    {% elif desk.status == 1 %}
+                        В работе
+                    {% elif desk.status == 2 %}
+                        Готово
                     {% else %}
-                        Статус : Не готово
+                        Неизвестный статус
                     {% endif %}
 
                 </p>
@@ -38,16 +42,25 @@
                     <p class="section-descr">Изображение отсутствует</p>
                 {% endif %}
 
-                {% if desk.status %}
-                {% else %}
+                {% if desk.status == 0  %}
+                        <form method="post" action="{% url 'change_status' desk.id %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="status" value="True">
+                            
+                            <button class="apl-form__btn btn" type="submit">Ввзять в работу</button>
+                        </form>
+                {% elif desk.status == 1 %}
                     <p class="section-descr">При нажатии на кнопку ниже, вы подтверждаете выполнение заявки и присваиваете ей статус "Готово"</p>
                     <form method="post" action="{% url 'change_status' desk.id %}">
                         {% csrf_token %}
                         <input type="hidden" name="status" value="True">
+                        
                         <button class="apl-form__btn btn" type="submit">Завершить</button>
                     </form>
+                {% else %}
                 {% endif %}
-                
+
+            
                 
             </div>
         </div>
